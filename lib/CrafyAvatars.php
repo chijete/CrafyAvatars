@@ -1,6 +1,6 @@
 <?php
 
-// CrafyAvatars it's a open source project from Crafy Holding.
+// CrafyAvatars it's a open source project from Crafy Holding, based on Multiavatar (https://github.com/multiavatar - https://multiavatar.com/).
 // First launch on December 13, 2022.
 // Developer contact: https://chijete.com/
 
