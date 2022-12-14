@@ -10,7 +10,8 @@ Both files contain the class "CrafyAvatars".
 
 ## PHP example
 ```
+require 'lib/CrafyAvatars.php'; // load library
 $myClass = new CrafyAvatars(); // init class
 $svg_string = $myClass->generate_svg_byInt($myClass->getAleatoryAvatarID()); // generates aleatory avatar svg code
-echo '<img src="'.$svg_string.'">'; // shows image
+echo $svg_string; // shows image as svg
 ```
