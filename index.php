@@ -26,4 +26,8 @@ echo $myClass->generate_svg_byInt('05030500000000000015');
 
 echo ((16*16*16*16)*(4*4*4*4)*(4)*(43)) . ' posibilidades.';
 
+echo "<br/>";
+
+var_dump($myClass->get_amounts());
+
 ?>

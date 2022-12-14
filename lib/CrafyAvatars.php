@@ -795,9 +795,23 @@ class CrafyAvatars
         return $base_string;
     }
 
+    public function get_amounts()
+    {
+        return [
+            'shapes' => $this->shapes_end_key + 1,
+            'themes' => $this->colors_end_key + 1,
+            'head_colors' => count($this->head_colors),
+        ];
+    }
+
     public function convertBaseArrayOnBaseInt($base_array)
     {
         return implode('', $base_array);
+    }
+
+    public function convertBaseIntOnBaseArray($base_int_str)
+    {
+        return str_split($base_int_str, 2);
     }
 }
 
