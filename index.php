@@ -22,7 +22,7 @@ $myClass = new CrafyAvatars();
 // echo $myClass->getAleatoryAvatarID();
 // echo "<br/>";
 
-echo $myClass->generate_svg_byInt('05030500000000000015');
+var_dump($myClass->generate_svg_byInt('05030500000000000010'));
 
 echo ((16*16*16*16)*(4*4*4*4)*(4)*(43)) . ' posibilidades.';
 

@@ -732,7 +732,15 @@ class CrafyAvatars
         $base_int_str = (string) $base_int;
         $base_array = str_split($base_int_str, 2);
         if (count($base_array) == 10) {
+            $all_elements_are_two_characters = true;
+            foreach ($base_array as $elemento) {
+                if (mb_strlen($elemento) != 2) {
+                    $all_elements_are_two_characters = false;
+                }
+            }
             if (
+                $all_elements_are_two_characters and
+
                 intval($base_array[0]) <= $this->shapes_end_key and
                 intval($base_array[1]) <= $this->shapes_end_key and
                 intval($base_array[2]) <= $this->shapes_end_key and
