@@ -10,6 +10,7 @@ var selector_theme_eyes = document.getElementById('selector_theme_eyes');
 var selector_theme_top = document.getElementById('selector_theme_top');
 var selector_theme_env = document.getElementById('selector_theme_env');
 var selector_theme_head = document.getElementById('selector_theme_head');
+var aleatory_button = document.getElementById('aleatory_button');
 
 let myClass = new CrafyAvatars;
 
@@ -58,3 +59,10 @@ document.querySelectorAll('#form_zone select').forEach(function(select_item) {
         executeAvatar();
     });
 });
+
+aleatory_button.addEventListener('click', function() {
+    actual_base_array = myClass.convertBaseIntOnBaseArray(myClass.getAleatoryAvatarID());
+    executeAvatar();
+});
+
+// console.log(myClass.generate_svg_byInt(myClass.getAleatoryAvatarID()));

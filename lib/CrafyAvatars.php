@@ -780,7 +780,7 @@ class CrafyAvatars
 
         $base_array[] = random_int(0, $this->colors_end_key);
 
-        $base_array[] = random_int(0, count($this->head_colors));
+        $base_array[] = random_int(0, count($this->head_colors)-1);
 
         $base_string = '';
 
