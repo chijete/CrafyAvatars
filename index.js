@@ -14,9 +14,9 @@ var selector_theme_head = document.getElementById('selector_theme_head');
 let myClass = new CrafyAvatars;
 
 var actual_base_array = [
-    '05', '03', '05', '00',
     '00', '00', '00', '00',
-    '00', '15'
+    '00', '00', '00', '00',
+    '00', '00'
 ];
 
 function executeAvatar () {
