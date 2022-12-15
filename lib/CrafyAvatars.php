@@ -654,6 +654,30 @@ class CrafyAvatars
             "#755227",
             "#997549",
         ];
+
+        $this->env_colors = [
+            "#FF0F00",
+            "#FF6100",
+            "#FF9700",
+            "#FFC500",
+            "#FFF300",
+            "#E4FF00",
+            "#AAFF00",
+            "#80FF00",
+            "#00FF80",
+            "#00FFBD",
+            "#00FFEC",
+            "#00E0FF",
+            "#00AEFF",
+            "#0080FF",
+            "#0800FF",
+            "#5900FF",
+            "#8F00FF",
+            "#BD00FF",
+            "#FF00F7",
+            "#FF00B2",
+            "#FF0070",
+        ];
     }
 
     /*
@@ -686,7 +710,7 @@ class CrafyAvatars
         ];
 
         $colors = [
-            'env' => $this->themes[$base_array[3]][$base_array[8]]['env'],
+            'env' => [$this->env_colors[intval($base_array[8])]],
             'head' => [$this->head_colors[intval($base_array[9])]],
             'clo' => $this->themes[$base_array[0]][$base_array[4]]['clo'],
             'mouth' => $this->themes[$base_array[1]][$base_array[5]]['mouth'],
@@ -730,6 +754,12 @@ class CrafyAvatars
     public function generate_svg_byInt($base_int)
     {
         $base_int_str = (string) $base_int;
+
+        // strict comparison
+        if (mb_strlen($base_int_str) != (10*2) OR preg_match("/[^0-9]/", $base_int_str) !== 0) {
+            return false;
+        }
+
         $base_array = str_split($base_int_str, 2);
         if (count($base_array) == 10) {
             $all_elements_are_two_characters = true;
@@ -749,7 +779,7 @@ class CrafyAvatars
                 intval($base_array[5]) <= $this->colors_end_key and
                 intval($base_array[6]) <= $this->colors_end_key and
                 intval($base_array[7]) <= $this->colors_end_key and
-                intval($base_array[8]) <= $this->colors_end_key and
+                intval($base_array[8]) < count($this->env_colors) and
                 intval($base_array[9]) < count($this->head_colors) and
 
                 intval($base_array[0]) >= 0 and
@@ -786,7 +816,7 @@ class CrafyAvatars
         $base_array[] = random_int(0, $this->colors_end_key);
         $base_array[] = random_int(0, $this->colors_end_key);
 
-        $base_array[] = random_int(0, $this->colors_end_key);
+        $base_array[] = random_int(0, count($this->env_colors)-1);
 
         $base_array[] = random_int(0, count($this->head_colors)-1);
 
@@ -809,6 +839,7 @@ class CrafyAvatars
             'shapes' => $this->shapes_end_key + 1,
             'themes' => $this->colors_end_key + 1,
             'head_colors' => count($this->head_colors),
+            'env_colors' => count($this->env_colors),
         ];
     }
 

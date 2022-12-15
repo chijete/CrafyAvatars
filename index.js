@@ -44,7 +44,11 @@ for (let index = 0; index < (amounts.themes); index++) {
     selector_theme_mouth.innerHTML = selector_theme_mouth.innerHTML + '<option value="'+indexi+'">'+indexi+'</option>';
     selector_theme_eyes.innerHTML = selector_theme_eyes.innerHTML + '<option value="'+indexi+'">'+indexi+'</option>';
     selector_theme_top.innerHTML = selector_theme_top.innerHTML + '<option value="'+indexi+'">'+indexi+'</option>';
-    selector_theme_env.innerHTML = selector_theme_env.innerHTML + '<option value="'+indexi+'">'+indexi+'</option>';
+}
+
+for (let index = 0; index < (amounts.env_colors); index++) {
+    let indexi = CrafyAvatars_addZeroToStart(index);
+    selector_theme_env.innerHTML = selector_theme_env.innerHTML + '<option value="' + indexi + '">' + indexi + '</option>';
 }
 
 for (let index = 0; index < (amounts.head_colors); index++) {
