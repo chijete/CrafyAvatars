@@ -6,6 +6,7 @@
 
 // PHP version of CrafyAvatars
 
+#[AllowDynamicProperties]
 class CrafyAvatars
 {
 
